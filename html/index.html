@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="main.css">
+	<script src="index.js"></script>
+
+</head>
+<body>
+    <!-- Main Content -->
+	<div class="container-fluid formulario" style="display: none;">
+		<div class="row main-content bg-success text-center">
+			<div class="col-md-4 text-center company__info">
+                <img class="avatar" style="border-radius:50px;" id="fotodiscord" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/robert.jpg" alt="Bologna">
+				<h4 class="company_title" id="nombre">Roderic</h4>
+			</div>
+			<div class="col-md-8 col-xs-12 col-sm-12 login_form ">
+				<div class="container-fluid">
+					<div class="row">
+						<h2>Make a Report</h2>
+					</div>
+					<div class="row">
+						<form control="" class="form-group">
+                            <div class="row">
+                                <h4 style="font-weight: bold;">What do you want to report?</h4>
+                                <br>
+								<input type="radio" name="remember_me" id="remember_me" value="Bug Report" required class="checkboxes" checked>
+								<label for="remember_me">Bug Report</label>
+                                <br>
+                                <input type="radio" name="remember_me" id="remember_me2" value="Other Report" required class="checkboxes">
+                                <label for="remember_me2">Other Report</label>
+                                <br>
+                                <input type="radio" name="remember_me" id="remember_me3" value="Player Report" required class="checkboxes player">
+                                <label for="remember_me3">Player Report</label>
+							</div>
+							<div class="row">
+								<input type="text" name="username" id="motive" class="form__input" placeholder="Motivo" required>
+								<input type="text" name="othername" id="idname" style="display: none;" class="form__input showid" placeholder="ID">
+							</div>
+							<div class="row">
+								<textarea type="text" name="username" id="addinfo" class="form__input" placeholder="Additional Information" maxlength="200" required></textarea>
+                                
+							</div>
+							<div class="row">
+								<input type="submit" value="Send Report" class="btn" id="enviar">
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
