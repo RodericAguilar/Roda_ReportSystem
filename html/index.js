@@ -1,13 +1,21 @@
-
-
 $(function(){
 
     window.addEventListener("message", function(event){
         var showid = false
+        
         if ( event.data.trans == true ) {
                 $("#fotodiscord").attr("src", event.data.ava);
                 $("#nombre").html(event.data.name);
                 $(".formulario").fadeIn(1000);
+                $( ".formulario" ).draggable();
+            }
+
+            if (event.data.img) {
+                $("#screen").attr("src", event.data.img);
+                $("#picture").fadeOut(0)
+                $("#enviar").fadeIn(100)
+            } else {
+                $("#picture").fadeIn(0)
             }
 
         $('input:radio[name="remember_me"]').change(
@@ -19,6 +27,21 @@ $(function(){
                     $(".showid").fadeOut(0);
                     showid = false
                 }
+        });
+
+        $("#picture").click(() => {
+            setTimeout(() => {
+                    $.post('https://Roda_ReportSystem/takepic', JSON.stringify({}));
+            }, 100);
+        });
+
+        $("#screen").click(() => {
+            $("#fullsize").attr("src", event.data.img);
+            $("#fullsize-screenshot").fadeIn();
+        });
+
+        $(".closeicon").click(() => {
+            $("#fullsize-screenshot").fadeOut();
         });
       
         $("#enviar").click(() => {
@@ -38,28 +61,34 @@ $(function(){
             $(".formulario").fadeOut(1000);
             setTimeout(() => {
                     $.post('https://Roda_ReportSystem/exit', JSON.stringify({}));
-            }, 100);
-            if (showid == true) {
+            }, 0);
+            if ($('#idname').val().length == 0) {
+
+                $.post('https://Roda_ReportSystem/submit', JSON.stringify({
+                    motivo: $("#motive").val(),   
+                    info: $("#addinfo").val(),   
+                    checkboxes: $(".checkboxes:checked").val(),
+                    pic: event.data.img,
+                })
+                );
+                return;
+            }else  {
                 $.post('https://Roda_ReportSystem/submit', JSON.stringify({
                     motivo: $("#motive").val(),   
                     info: $("#addinfo").val(),   
                     checkboxes: $(".checkboxes:checked").val(),
                     idshow: $("#idname").val(),
+                    pic: event.data.img,
                 })
                 );
-            }else if (showid == false) {
-                $.post('https://Roda_ReportSystem/submit', JSON.stringify({
-                    motivo: $("#motive").val(),   
-                    info: $("#addinfo").val(),   
-                    checkboxes: $(".checkboxes:checked").val(),
-                })
-                );
+               return;
             }
-       
         });
 
     })    
 })
+
+
 
 
 
@@ -69,6 +98,7 @@ $(document).keyup((e) => {
         $(".formulario").fadeOut(1000);
         setTimeout(() => {
             $.post('https://Roda_ReportSystem/exit', JSON.stringify({}));
+        
         }, 300);
     }
 });

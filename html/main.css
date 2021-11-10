@@ -1,5 +1,6 @@
 body {
 	background: transparent;
+	overflow: hidden;
 }
 
 .main-content{
@@ -10,7 +11,7 @@ body {
 	display: flex;
 }
 .company__info{
-	background-color: #000000;
+	background-image: radial-gradient( circle 976px at 51.2% 51%,  rgba(11,27,103,1) 0%, rgba(16,66,157,1) 0%, rgba(11,27,103,1) 17.3%, rgba(11,27,103,1) 58.8%, rgba(11,27,103,1) 71.4%, rgba(16,66,157,1) 100.2%, rgba(187,187,187,1) 100.2% );
 	border-top-left-radius: 20px;
 	border-bottom-left-radius: 20px;
 	display: flex;
@@ -35,10 +36,11 @@ body {
 	.main-content{width: 70%;}
 }
 .row > h2{
-	color:#008080;
+	color:#2b007a;
+	font-size: bold;
 }
 .login_form{
-	background-color: #fff;
+	background-image: linear-gradient( 92.7deg,  rgba(245,212,212,1) 8.5%, rgba(252,251,224,1) 90.2% );
 	border-top-right-radius:20px;
 	border-bottom-right-radius:20px;
 	border-top:1px solid #ccc;
@@ -57,24 +59,54 @@ form{
 	outline:none;
 	margin:1.5em auto;
 	transition: all .5s ease;
+	background: transparent;
 }
 .form__input:focus{
 	border-bottom-color: #008080;
-	box-shadow: 0 0 5px rgba(0,80,80,.4); 
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.7); 
 	border-radius: 4px;
 }
 .btn{
 	transition: all .5s ease;
 	width: 70%;
 	border-radius: 30px;
-	color:#008080;
+	color:#000000;
 	font-weight: 600;
 	background-color: #fff;
-	border: 1px solid #008080;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.7); 
+	border-radius: 4px;
+	background: transparent;
 	margin-top: 1.5em;
 	margin-bottom: 1em;
 }
 .btn:hover, .btn:focus{
-	background-color: #008080;
+	background-color: #000000;
 	color:#fff;
+}
+
+
+#fullsize-screenshot {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    width: 80%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+	border: 3px solid black ;
+    overflow: hidden;
+}
+
+#fullsize-screenshot > * {
+    width: 100%;
+}
+
+#fullsize-screenshot .closeicon {
+    position: absolute;
+    z-index: 10;
+    color: black;
+    text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
+    top: 1%;
+    left: 1%;
 }

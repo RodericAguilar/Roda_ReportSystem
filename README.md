@@ -1,5 +1,6 @@
 ### Put your webhook in Server/ConfigSv.lua
-## Put your bot token need to stay in your discord server with admin role in Server/functions.lua
+## READ ALL CONFIGS.
+## Put your bot token, need to stay in your discord server with admin role in Server/functions.lua
 
 Made with love by Roderic
 

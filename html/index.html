@@ -5,11 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="main.css">
+<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>   
+<link rel="stylesheet" href="main.css">
 	<script src="index.js"></script>
 
 </head>
@@ -46,10 +48,17 @@
 							</div>
 							<div class="row">
 								<textarea type="text" name="username" id="addinfo" class="form__input" placeholder="Additional Information" maxlength="200" required></textarea>
-                                
+                                <input type="tel" value="Take Picture" class="btn" id="picture">
 							</div>
 							<div class="row">
-								<input type="submit" value="Send Report" class="btn" id="enviar">
+								<input type="submit" value="Send Report" class="btn" id="enviar" style="display: none;">
+							</div>
+							<div class="row">
+								<img src="foto" id="screen" class="img-fluid img-thumbnail" alt="">
+								<div id="fullsize-screenshot">
+									<i class="closeicon fas fa-times fa-2x"></i>	
+									<img src="test.png" id="fullsize"></img>
+								</div>
 							</div>
 						</form>
 					</div>
